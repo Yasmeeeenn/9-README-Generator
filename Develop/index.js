@@ -59,7 +59,18 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer
+    .createPromptModule(questions)
+    .then((answers) => {
+        const readmeContent = generateReadme(answers);
+        writeToFile('README.md', readmeContent);
+        console.log('README.md generated successfully!');
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
 
 // Function call to initialize app
 init();
