@@ -53,41 +53,7 @@ const questions = [
     
 ];
 
-function generateReadme(answers){
-    return `
-    # ${answers.title}
-    
-    ## Description
-    ${answers.description}
-    
-    ## Table of Contents
-    [Installation](#installation)
-    [Usage](#usage)
-    [License](#license)
-    [Contribution](#contribution)
-    [Test](#tests)
-    [Questions](#questions)
-    
-    ## Installation
-    ${answers.installation}
-    
-    ## Usage
-    ${answers.usage}
-    
-    ## License
-    This project is under the ${answers.license} license.
-    
-    ## Contributing
-    ${answers.contributing}
-    
-    ## Tests
-    ${answers.tests}
-    
-    ## Questions
-    GitHub: https://github.com/${answers.github}
-    Email: ${answers.email}
-    `;
-}
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -98,8 +64,8 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer
     .createPromptModule(questions)
-    .then((answers) => {
-        const readmeContent = generateReadme(answers);
+    .then((data) => {
+        const readmeContent = generateReadme(data);
         writeToFile('README.md', readmeContent);
         console.log('README.md generated successfully!');
     })
