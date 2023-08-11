@@ -53,6 +53,42 @@ const questions = [
     
 ];
 
+function generateReadme(answers){
+    return `
+    # ${answers.title}
+    
+    ## Description
+    ${answers.description}
+    
+    ## Table of Contents
+    [Installation]
+    [Usage]
+    [License]
+    [Contribution]
+    [Test]
+    [Questions]
+    
+    ## Installation
+    ${answers.installation}
+    
+    ## Usage
+    ${answers.usage}
+    
+    ## License
+    This project is under the ${answers.license} license.
+    
+    ## Contributing
+    ${answers.contributing}
+    
+    ## Tests
+    ${answers.tests}
+    
+    ## Questions
+    GitHub: https://github.com/${answers.github}
+    Email: ${answers.email}
+    `;
+}
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName,data);
