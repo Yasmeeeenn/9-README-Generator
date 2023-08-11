@@ -61,12 +61,12 @@ function generateReadme(answers){
     ${answers.description}
     
     ## Table of Contents
-    [Installation]
-    [Usage]
-    [License]
-    [Contribution]
-    [Test]
-    [Questions]
+    [Installation](#installation)
+    [Usage](#usage)
+    [License](#license)
+    [Contribution](#contribution)
+    [Test](#tests)
+    [Questions](#questions)
     
     ## Installation
     ${answers.installation}
