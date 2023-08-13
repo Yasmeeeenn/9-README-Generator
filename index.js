@@ -66,7 +66,7 @@ function init() {
     inquirer
     .prompt(questions)
     .then((data) => {
-        const readmeContent = generateReadme(data);
+        const readmeContent = generateMarkdown(data);
         writeToFile('README.md', readmeContent);
         console.log('README.md generated successfully!');
     })
