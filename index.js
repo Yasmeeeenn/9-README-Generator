@@ -59,12 +59,12 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName,data);
-}
+};
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-    .createPromptModule(questions)
+    .prompt(questions)
     .then((data) => {
         const readmeContent = generateReadme(data);
         writeToFile('README.md', readmeContent);
@@ -73,7 +73,7 @@ function init() {
     .catch((error) => {
         console.error('Error:', error);
     });
-}
+};
 
 // Function call to initialize app
 init();
